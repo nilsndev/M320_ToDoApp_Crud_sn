@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using M320_ToDoApp_Crud.forms;
 
 namespace M320_ToDoApp_Crud
 {
@@ -16,7 +17,7 @@ namespace M320_ToDoApp_Crud
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new MainForm());
         }
     }
 }
