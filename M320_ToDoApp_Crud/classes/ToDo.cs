@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace M320_ToDoApp_Crud.classes{
-    internal class ToDo{
+    public class ToDo{
         #region Fields
         DateTime _expiryDate; //Fälligkeitsdatum
         string _name;
