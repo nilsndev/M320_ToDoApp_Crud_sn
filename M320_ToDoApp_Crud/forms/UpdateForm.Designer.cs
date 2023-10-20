@@ -114,12 +114,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(436, 450);
             this.Controls.Add(this.update_butt1);
             this.Controls.Add(this.data_pan1);
             this.Controls.Add(this.select_item_lbl1);
             this.Controls.Add(this.items_cb1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "UpdateForm";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UpdateForm";
             this.Load += new System.EventHandler(this.UpdateForm_Load);
             this.data_pan1.ResumeLayout(false);

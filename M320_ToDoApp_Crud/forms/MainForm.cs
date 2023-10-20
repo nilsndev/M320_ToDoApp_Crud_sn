@@ -14,7 +14,6 @@ namespace M320_ToDoApp_Crud.forms{
         public MainForm(){
             InitializeComponent();
         }
-
         private void update_butt1_Click(object sender, EventArgs e){
             try{
                 UpdateForm uf = new UpdateForm();
@@ -22,13 +21,11 @@ namespace M320_ToDoApp_Crud.forms{
                 uf.Dispose();
                 this.output_dgv.Refresh();
             }
-            catch (Exception ex)
-            {
+            catch (Exception ex){
                 MessageBox.Show(ex.Message);
             }
 
         }
-
         private void MainForm_Load(object sender, EventArgs e){
             try{
                 //-----Die Zeilen innerhalb dieses Kommentarblockes können später gelöscht werden---------
@@ -37,10 +34,14 @@ namespace M320_ToDoApp_Crud.forms{
                 //=========================================================================================
                 this.output_dgv.DataSource = Settings.ToDoes;
             }
-            catch (Exception ex)
-            {
+            catch (Exception ex){
                 MessageBox.Show(ex.Message);
             }
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
 
         }
     }

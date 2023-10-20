@@ -33,6 +33,7 @@ namespace M320_ToDoApp_Crud.forms
                         Settings.ToDoes[i].Name = this.name_tb1.Text;
                         Settings.ToDoes[i].ExpiryDate = expDate;
                         MessageBox.Show("Bearbeitung war erfolgreich");
+                        this.Close();
                     }
                 }
             }

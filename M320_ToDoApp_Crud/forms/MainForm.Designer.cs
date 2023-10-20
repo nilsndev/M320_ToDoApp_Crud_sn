@@ -66,6 +66,7 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "Add ToDO";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // update_butt1
             // 
@@ -81,7 +82,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(412, 39);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(172, 100);
             this.button2.TabIndex = 3;
@@ -98,8 +99,12 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.delete_butt1);
             this.Controls.Add(this.output_dgv);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
             this.Name = "MainForm";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.output_dgv)).EndInit();
