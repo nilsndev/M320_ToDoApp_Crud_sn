@@ -55,6 +55,12 @@
     <Compile Include="forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\OwnMessagebox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\OwnMessagebox.Designer.cs">
+      <DependentUpon>OwnMessagebox.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\UpdateForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +70,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\OwnMessagebox.resx">
+      <DependentUpon>OwnMessagebox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\UpdateForm.resx">
       <DependentUpon>UpdateForm.cs</DependentUpon>
@@ -76,6 +85,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -89,6 +99,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\98727_info_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\98727_info_icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warining_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\success_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\error_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

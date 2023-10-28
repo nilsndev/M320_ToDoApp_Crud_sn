@@ -13,8 +13,7 @@ namespace M320_ToDoApp_Crud.forms
 {
     public partial class UpdateForm : Form
     {
-        public UpdateForm()
-        {
+        public UpdateForm(){
             InitializeComponent();
         }
 
@@ -23,11 +22,11 @@ namespace M320_ToDoApp_Crud.forms
             DateTime expDate;
             try{
                 selectedValue = this.items_cb1.SelectedItem.ToString();
-                if (selectedValue == "" || this.name_tb1.Text == "" || this.expDate_tb1.Text == ""){
+                if (selectedValue == "" || this.name_tb1.Text == ""){
                     MessageBox.Show("ALle Felder müssen ausgefüllt sein");
                     return;
                 }
-                expDate = Convert.ToDateTime(this.expDate_tb1.Text);
+                expDate = Convert.ToDateTime(this.dateTimePicker1.Text);
                 for (int i = 0; i < Settings.ToDoes.Count; i++){
                     if (Settings.ToDoes[i].Name == selectedValue){
                         Settings.ToDoes[i].Name = this.name_tb1.Text;
@@ -47,10 +46,35 @@ namespace M320_ToDoApp_Crud.forms
                 for (int i = 0; i < Settings.ToDoes.Count; i++){
                     this.items_cb1.Items.Add(Settings.ToDoes[i].Name);
                 }
+                this.items_cb1.SelectedIndex = 0;
             }
             catch (Exception ex){
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void day_tb_TextChanged(object sender, EventArgs e){
+            int val = 0;
+            TextBox tb = sender as TextBox;
+            Int32.TryParse(tb.Text, out val);
+            if(val > 31){
+                tb.Text = "";
+            } 
+        }
+
+        private void date_tb_KeyPress(object sender, KeyPressEventArgs e){
+            charFound(e);
+        }
+        bool charFound(KeyPressEventArgs e){
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back){
+                e.Handled = true;
+                return false;
+            }
+            return true;
+        }
+
+        private void month_tb_TextChanged(object sender, EventArgs e){
+
         }
     }
 }
