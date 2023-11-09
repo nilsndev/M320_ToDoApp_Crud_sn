@@ -9,10 +9,12 @@ namespace M320_ToDoApp_Crud.classes{
         #region Fields
         DateTime _expiryDate; //Fälligkeitsdatum
         string _name;
+        string _description;
         #endregion
         #region Characteristics
         public DateTime ExpiryDate { get{ return _expiryDate; } set { _expiryDate = value; } }
         public string Name { get { return _name; } set { _name = value; } }
+        public string Description { get { return _description; } set { _description = value; } }
         #endregion
     }
 }

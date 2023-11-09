@@ -21,11 +21,15 @@ namespace M320_ToDoApp_Crud.forms{
             InitializeComponent();
         }
         private void update_butt1_Click(object sender, EventArgs e){
+            UpdateForm uf;
             try{
-                UpdateForm uf = new UpdateForm();
+                uf = new UpdateForm();
                 uf.ShowDialog();
                 uf.Dispose();
                 this.output_dgv.Refresh();
+                if(uf.DialogResult == DialogResult.OK){
+                    saveDatainFile_butt_Click(sender, e);
+                }
             }
             catch (Exception ex){
                 showMSB(errMess + ex.Message, Resources.error_icon);
@@ -36,17 +40,29 @@ namespace M320_ToDoApp_Crud.forms{
         private void MainForm_Load(object sender, EventArgs e){
             try{
                 loadDataFromFile_butt_Click(sender,e);
-                this.output_dgv.DataSource = classes.Settings.ToDoes;
+                connectDGV();
             }
             catch (Exception ex){
                 MessageBox.Show(ex.Message);
             }
 
         }
+        void connectDGV(){
+            var descriptionColumn = output_dgv.Columns["Description"];
+            this.output_dgv.DataSource =classes.Settings.ToDoes;
+            if(descriptionColumn != null){
+                descriptionColumn.Visible = false;
+            }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
+        }
+
+        private void adButt_Click(object sender, EventArgs e){
+            AddForm af = new AddForm();
+            af.ShowDialog();
+            if(af.DialogResult == DialogResult.OK){
+                saveDatainFile_butt_Click(sender, e);
+                loadDataFromFile_butt_Click(sender, e);
+            }
         }
 
         private void saveDatainFile_butt_Click(object sender, EventArgs e){
@@ -76,7 +92,7 @@ namespace M320_ToDoApp_Crud.forms{
             XmlSerializer serializer = new XmlSerializer(typeof (List<ToDo>));
             classes.Settings.ToDoes = (List<ToDo>) serializer.Deserialize(sr);
             sr.Close();
-            this.output_dgv.DataSource = classes.Settings.ToDoes;
+            connectDGV();
         }
         void showMSB(string txt,Image img){
             smsb = new OwnMessagebox(txt,img);
@@ -85,6 +101,34 @@ namespace M320_ToDoApp_Crud.forms{
 
         private void clear_butt_Click(object sender, EventArgs e){
             this.output_dgv.DataSource = null;
+        }
+
+        private void output_dgv_CellClick(object sender, DataGridViewCellEventArgs e){
+            try{
+                ToDo actElement = M320_ToDoApp_Crud.classes.Settings.ToDoes[e.RowIndex];
+                ViewSingleToDo vsf = new ViewSingleToDo(actElement,e.RowIndex);
+                DialogResult dr = vsf.ShowDialog();
+                if(dr == DialogResult.OK){
+                    //fertig machen
+                    saveDatainFile_butt_Click(sender, e);
+                }
+            }catch(Exception ex){
+                OwnMessagebox owm = new OwnMessagebox(ex.Message, Resources.error_icon);
+                owm.ShowDialog();
+            }
+            
+
+
+        }
+
+        private void delete_butt1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void output_dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

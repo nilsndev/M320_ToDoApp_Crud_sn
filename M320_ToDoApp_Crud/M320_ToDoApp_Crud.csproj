@@ -49,6 +49,12 @@
     <Compile Include="classes\Settings.cs" />
     <Compile Include="classes\ToDo.cs" />
     <Compile Include="classes\Program.cs" />
+    <Compile Include="forms\AddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\AddForm.Designer.cs">
+      <DependentUpon>AddForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,7 +73,16 @@
     <Compile Include="forms\UpdateForm.Designer.cs">
       <DependentUpon>UpdateForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\ViewSingleToDo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\ViewSingleToDo.Designer.cs">
+      <DependentUpon>ViewSingleToDo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="forms\AddForm.resx">
+      <DependentUpon>AddForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -76,6 +91,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\UpdateForm.resx">
       <DependentUpon>UpdateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\ViewSingleToDo.resx">
+      <DependentUpon>ViewSingleToDo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -115,5 +133,21 @@
   <ItemGroup>
     <None Include="Resources\error_icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\update_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clear_icon.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -20,10 +20,12 @@ namespace M320_ToDoApp_Crud.forms
         private void update_butt1_Click(object sender, EventArgs e){
             string selectedValue;
             DateTime expDate;
+            OwnMessagebox own;
             try{
                 selectedValue = this.items_cb1.SelectedItem.ToString();
-                if (selectedValue == "" || this.name_tb1.Text == ""){
-                    MessageBox.Show("ALle Felder müssen ausgefüllt sein");
+                if (selectedValue == "" || this.name_tb1.Text == "" || this.description_lbl.Text == ""){
+                    own = new OwnMessagebox("ALle Felder müssen ausgefüllt sein",M320_ToDoApp_Crud.Properties.Resources.warining_icon);
+                    own.ShowDialog();
                     return;
                 }
                 expDate = Convert.ToDateTime(this.dateTimePicker1.Text);
@@ -31,8 +33,8 @@ namespace M320_ToDoApp_Crud.forms
                     if (Settings.ToDoes[i].Name == selectedValue){
                         Settings.ToDoes[i].Name = this.name_tb1.Text;
                         Settings.ToDoes[i].ExpiryDate = expDate;
-                        MessageBox.Show("Bearbeitung war erfolgreich");
-                        this.Close();
+                        Settings.ToDoes[i].Description = this.description_tb.Text;
+                        this.DialogResult = DialogResult.OK;
                     }
                 }
             }
@@ -74,6 +76,24 @@ namespace M320_ToDoApp_Crud.forms
         }
 
         private void month_tb_TextChanged(object sender, EventArgs e){
+
+        }
+
+        private void items_cb1_SelectedValueChanged(object sender, EventArgs e){
+            ComboBox cb = sender as ComboBox;
+            ToDo activeToDO = Settings.ToDoes[cb.SelectedIndex];
+            this.name_tb1.Text = activeToDO.Name;
+            this.dateTimePicker1.Text = activeToDO.ExpiryDate.ToString();
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void data_pan1_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }
