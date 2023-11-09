@@ -29,7 +29,6 @@ namespace M320_ToDoApp_Crud.forms
 
         private void ViewSingleToDo_Load(object sender, EventArgs e)
         {
-
         }
 
         private void delete_butt1_Click(object sender, EventArgs e){
@@ -43,7 +42,7 @@ namespace M320_ToDoApp_Crud.forms
                 return;
             }
             M320_ToDoApp_Crud.classes.Settings.ToDoes.RemoveAt(_activeIndex);
-            this.Close();
+            this.DialogResult = DialogResult.OK;
 
         }
     }

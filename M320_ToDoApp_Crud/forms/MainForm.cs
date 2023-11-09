@@ -107,10 +107,11 @@ namespace M320_ToDoApp_Crud.forms{
             try{
                 ToDo actElement = M320_ToDoApp_Crud.classes.Settings.ToDoes[e.RowIndex];
                 ViewSingleToDo vsf = new ViewSingleToDo(actElement,e.RowIndex);
-                DialogResult dr = vsf.ShowDialog();
-                if(dr == DialogResult.OK){
+                vsf.ShowDialog();
+                if(vsf.DialogResult == DialogResult.OK){
                     //fertig machen
                     saveDatainFile_butt_Click(sender, e);
+                    loadDataFromFile_butt_Click(sender, e);
                 }
             }catch(Exception ex){
                 OwnMessagebox owm = new OwnMessagebox(ex.Message, Resources.error_icon);
@@ -129,6 +130,11 @@ namespace M320_ToDoApp_Crud.forms{
         private void output_dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void output_dgv_DataError(object sender, DataGridViewDataErrorEventArgs e){
+            e.Cancel = true;
+            return;
         }
     }
 }

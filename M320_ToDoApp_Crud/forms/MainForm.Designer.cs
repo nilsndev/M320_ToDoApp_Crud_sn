@@ -96,6 +96,7 @@
             this.output_dgv.TabIndex = 0;
             this.output_dgv.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.output_dgv_CellClick);
             this.output_dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.output_dgv_CellContentClick);
+            this.output_dgv.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.output_dgv_DataError);
             // 
             // add_butt
             // 
