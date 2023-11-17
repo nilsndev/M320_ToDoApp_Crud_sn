@@ -19,7 +19,7 @@ namespace M320_ToDoApp_Crud.forms
         }
 
         private void add_butt_Click(object sender, EventArgs e){
-            Settings.ToDoes.Add(new ToDo(){
+            DataSettings.ToDoes.Add(new ToDo(){
                 Name = this.name_tb1.Text,
                 Description = this.description_tb.Text,
                 ExpiryDate = this.dateTimePicker1.Value

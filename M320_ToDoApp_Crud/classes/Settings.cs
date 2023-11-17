@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace M320_ToDoApp_Crud.classes{
-    public static class Settings{
+    public static class DataSettings{
         #region Fields
         static List<ToDo> _toDoes = new List<ToDo>();
         #endregion

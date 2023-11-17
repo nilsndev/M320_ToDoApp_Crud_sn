@@ -41,7 +41,7 @@ namespace M320_ToDoApp_Crud.forms
                 owmb.ShowDialog();
                 return;
             }
-            M320_ToDoApp_Crud.classes.Settings.ToDoes.RemoveAt(_activeIndex);
+            M320_ToDoApp_Crud.classes.DataSettings.ToDoes.RemoveAt(_activeIndex);
             this.DialogResult = DialogResult.OK;
 
         }

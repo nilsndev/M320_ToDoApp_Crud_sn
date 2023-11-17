@@ -35,7 +35,6 @@ namespace M320_ToDoApp_Crud.forms{
                 showMSB(errMess + ex.Message, Resources.error_icon);
                 MessageBox.Show(ex.Message);
             }
-
         }
         private void MainForm_Load(object sender, EventArgs e){
             try{
@@ -49,7 +48,7 @@ namespace M320_ToDoApp_Crud.forms{
         }
         void connectDGV(){
             var descriptionColumn = output_dgv.Columns["Description"];
-            this.output_dgv.DataSource =classes.Settings.ToDoes;
+            this.output_dgv.DataSource =classes.DataSettings.ToDoes;
             if(descriptionColumn != null){
                 descriptionColumn.Visible = false;
             }
@@ -72,7 +71,7 @@ namespace M320_ToDoApp_Crud.forms{
                 path = Application.StartupPath + "/savedFiles/data.xml";
                 StreamWriter sw = new StreamWriter(path);
                 XmlSerializer serializer = new XmlSerializer(typeof(List<ToDo>));
-                serializer.Serialize(sw, classes.Settings.ToDoes);
+                serializer.Serialize(sw, classes.DataSettings.ToDoes);
                 sw.Close();
                 img = Resources.success_icon;
                 txt = "Daten wurden erfolgreich gespeichert";
@@ -90,7 +89,7 @@ namespace M320_ToDoApp_Crud.forms{
             path = Application.StartupPath + "/savedFiles/data.xml";
             StreamReader sr = new StreamReader(path);
             XmlSerializer serializer = new XmlSerializer(typeof (List<ToDo>));
-            classes.Settings.ToDoes = (List<ToDo>) serializer.Deserialize(sr);
+            classes.DataSettings.ToDoes = (List<ToDo>) serializer.Deserialize(sr);
             sr.Close();
             connectDGV();
         }
@@ -105,7 +104,7 @@ namespace M320_ToDoApp_Crud.forms{
 
         private void output_dgv_CellClick(object sender, DataGridViewCellEventArgs e){
             try{
-                ToDo actElement = M320_ToDoApp_Crud.classes.Settings.ToDoes[e.RowIndex];
+                ToDo actElement = M320_ToDoApp_Crud.classes.DataSettings.ToDoes[e.RowIndex];
                 ViewSingleToDo vsf = new ViewSingleToDo(actElement,e.RowIndex);
                 vsf.ShowDialog();
                 if(vsf.DialogResult == DialogResult.OK){
@@ -121,7 +120,6 @@ namespace M320_ToDoApp_Crud.forms{
 
 
         }
-
         private void delete_butt1_Click(object sender, EventArgs e)
         {
 

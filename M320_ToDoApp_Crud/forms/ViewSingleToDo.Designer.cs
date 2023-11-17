@@ -82,9 +82,11 @@
             this.description_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.description_tb.Location = new System.Drawing.Point(13, 151);
             this.description_tb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.description_tb.Multiline = true;
             this.description_tb.Name = "description_tb";
             this.description_tb.ReadOnly = true;
-            this.description_tb.Size = new System.Drawing.Size(233, 30);
+            this.description_tb.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.description_tb.Size = new System.Drawing.Size(233, 41);
             this.description_tb.TabIndex = 19;
             // 
             // name_lbl1

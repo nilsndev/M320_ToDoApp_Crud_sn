@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdateForm));
             this.update_butt1 = new System.Windows.Forms.Button();
             this.data_pan1 = new System.Windows.Forms.Panel();
+            this.description_lbl = new System.Windows.Forms.Label();
+            this.description_tb = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.name_lbl1 = new System.Windows.Forms.Label();
             this.select_item_lbl1 = new System.Windows.Forms.Label();
@@ -38,8 +40,6 @@
             this.items_cb1 = new System.Windows.Forms.ComboBox();
             this.date_tb1 = new System.Windows.Forms.Label();
             this.header_lbl = new System.Windows.Forms.Label();
-            this.description_lbl = new System.Windows.Forms.Label();
-            this.description_tb = new System.Windows.Forms.TextBox();
             this.data_pan1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,6 +75,27 @@
             this.data_pan1.Size = new System.Drawing.Size(409, 371);
             this.data_pan1.TabIndex = 6;
             this.data_pan1.Paint += new System.Windows.Forms.PaintEventHandler(this.data_pan1_Paint);
+            // 
+            // description_lbl
+            // 
+            this.description_lbl.AutoSize = true;
+            this.description_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.description_lbl.Location = new System.Drawing.Point(37, 190);
+            this.description_lbl.Name = "description_lbl";
+            this.description_lbl.Size = new System.Drawing.Size(127, 25);
+            this.description_lbl.TabIndex = 14;
+            this.description_lbl.Text = "Description:";
+            // 
+            // description_tb
+            // 
+            this.description_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.description_tb.Location = new System.Drawing.Point(43, 217);
+            this.description_tb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.description_tb.Multiline = true;
+            this.description_tb.Name = "description_tb";
+            this.description_tb.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.description_tb.Size = new System.Drawing.Size(233, 37);
+            this.description_tb.TabIndex = 13;
             // 
             // dateTimePicker1
             // 
@@ -148,25 +169,6 @@
             this.header_lbl.Size = new System.Drawing.Size(312, 54);
             this.header_lbl.TabIndex = 8;
             this.header_lbl.Text = "Update ToDo";
-            // 
-            // description_lbl
-            // 
-            this.description_lbl.AutoSize = true;
-            this.description_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.description_lbl.Location = new System.Drawing.Point(37, 190);
-            this.description_lbl.Name = "description_lbl";
-            this.description_lbl.Size = new System.Drawing.Size(127, 25);
-            this.description_lbl.TabIndex = 14;
-            this.description_lbl.Text = "Description:";
-            // 
-            // description_tb
-            // 
-            this.description_tb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.description_tb.Location = new System.Drawing.Point(43, 217);
-            this.description_tb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.description_tb.Name = "description_tb";
-            this.description_tb.Size = new System.Drawing.Size(233, 30);
-            this.description_tb.TabIndex = 13;
             // 
             // UpdateForm
             // 

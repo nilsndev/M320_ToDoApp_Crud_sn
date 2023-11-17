@@ -29,11 +29,11 @@ namespace M320_ToDoApp_Crud.forms
                     return;
                 }
                 expDate = Convert.ToDateTime(this.dateTimePicker1.Text);
-                for (int i = 0; i < Settings.ToDoes.Count; i++){
-                    if (Settings.ToDoes[i].Name == selectedValue){
-                        Settings.ToDoes[i].Name = this.name_tb1.Text;
-                        Settings.ToDoes[i].ExpiryDate = expDate;
-                        Settings.ToDoes[i].Description = this.description_tb.Text;
+                for (int i = 0; i < DataSettings.ToDoes.Count; i++){
+                    if (DataSettings.ToDoes[i].Name == selectedValue){
+                        DataSettings.ToDoes[i].Name = this.name_tb1.Text;
+                        DataSettings.ToDoes[i].ExpiryDate = expDate;
+                        DataSettings.ToDoes[i].Description = this.description_tb.Text;
                         this.DialogResult = DialogResult.OK;
                     }
                 }
@@ -45,8 +45,8 @@ namespace M320_ToDoApp_Crud.forms
         }
         private void UpdateForm_Load(object sender, EventArgs e){
             try{
-                for (int i = 0; i < Settings.ToDoes.Count; i++){
-                    this.items_cb1.Items.Add(Settings.ToDoes[i].Name);
+                for (int i = 0; i < DataSettings.ToDoes.Count; i++){
+                    this.items_cb1.Items.Add(DataSettings.ToDoes[i].Name);
                 }
                 this.items_cb1.SelectedIndex = 0;
             }
@@ -81,9 +81,10 @@ namespace M320_ToDoApp_Crud.forms
 
         private void items_cb1_SelectedValueChanged(object sender, EventArgs e){
             ComboBox cb = sender as ComboBox;
-            ToDo activeToDO = Settings.ToDoes[cb.SelectedIndex];
+            ToDo activeToDO = DataSettings.ToDoes[cb.SelectedIndex];
             this.name_tb1.Text = activeToDO.Name;
             this.dateTimePicker1.Text = activeToDO.ExpiryDate.ToString();
+            this.description_tb.Text = activeToDO.Description;
 
         }
 
